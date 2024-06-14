@@ -1,3 +1,4 @@
+#pragma once
 // Student_info.h
 #ifndef GUARD_STDINFO_H
 #define GUARD_STDINFO_H
@@ -7,20 +8,20 @@
 #include <string>
 #include <vector>
 
-#include "Core.h" // private ë³€ìˆ˜ cp ìœ„í•´
+#include "Core.h" // private º¯¼ö cp À§ÇØ
 
 using namespace std;
 
 class Student_info {
 public:
-	// ìƒì„±ì ë° ë³µì‚¬ ì œì–´
+	// »ı¼ºÀÚ ¹× º¹»ç Á¦¾î
 	Student_info() : cp(0) { }
 	Student_info(istream& is) : cp(0) { read(is); }
 	Student_info(const Student_info&);
 	Student_info& operator=(const Student_info&);
 	// ~Student_info() { delete cp; }
 
-	// ë©¤ë²„ í•¨ìˆ˜
+	// ¸â¹ö ÇÔ¼ö
 	istream& read(istream&);
 
 	string getName() const {

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Core í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜ ì •ì˜
+// Core Å¬·¡½ºÀÇ ¸â¹ö ÇÔ¼ö Á¤ÀÇ
 istream& read_hw(istream& in, vector<double>& hw);
 
 string Core::getName() const { return name; }
@@ -14,31 +14,31 @@ double Core::grade() const {
 }
 
 /**
- * @brief ê³µí†µìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ë°ì´í„°ë¥¼ ì½ì–´ë“¤ì´ëŠ” í•¨ìˆ˜
- * 
+ * @brief °øÅëÀ¸·Î »ç¿ëÇÏ´Â µ¥ÀÌÅÍ¸¦ ÀĞ¾îµéÀÌ´Â ÇÔ¼ö
+ *
  * @param in
  * @return istream&
- * 
+ *
  * @see Core::read
- * 
- * @note Core í´ë˜ìŠ¤ì˜ read_common í•¨ìˆ˜ëŠ” í•™ìƒ name, midterm, final ì ìˆ˜ë¥¼ ì½ì–´ë“¤ì´ëŠ” í•¨ìˆ˜ì´ë‹¤.
+ *
+ * @note Core Å¬·¡½ºÀÇ read_common ÇÔ¼ö´Â ÇĞ»ı name, midterm, final Á¡¼ö¸¦ ÀĞ¾îµéÀÌ´Â ÇÔ¼öÀÌ´Ù.
  */
 istream& Core::read_common(istream& in) {
-	// í•™ìƒ ì´ë¦„ê³¼ ì‹œí—˜ ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ì €ì¥
+	// ÇĞ»ı ÀÌ¸§°ú ½ÃÇè Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ ÀúÀå
 	in >> name >> midterm >> final;
 	return in;
 }
 istream& Core::read(istream& in) {
 	read_common(in);
-	read_hw(in, homework); // Student_info.hì— ìˆë‹¤.
+	read_hw(in, homework); // Student_info.h¿¡ ÀÖ´Ù.
 	return in;
 }
 
-// ë¹„ë©¤ë²„ í•¨ìˆ˜ ì •ì˜
+// ºñ¸â¹ö ÇÔ¼ö Á¤ÀÇ
 bool compare(const Core& c1, const Core& c2) {
 	return c1.getName() < c2.getName();
 }
 
 bool compare_grades(const Core& c1, const Core& c2) {
-	return c1.grade() < c2.grade(); // ê°€ìƒ í•¨ìˆ˜ ì‚¬ìš©í•´ì•¼ë¨
+	return c1.grade() < c2.grade(); // °¡»ó ÇÔ¼ö »ç¿ëÇØ¾ßµÊ
 }

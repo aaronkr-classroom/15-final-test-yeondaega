@@ -15,23 +15,23 @@
 using namespace std;
 
 int main() {
-	// íŒŒì¼ìŠ¤íŠ¸ë¦¼ ë§Œë“¤ê³  "txt" íŒŒì¼ì„ ì½ê¸°
-	ifstream student_file("new_grades.txt"); // ì—ëŸ°
+	// ÆÄÀÏ½ºÆ®¸² ¸¸µé°í "txt" ÆÄÀÏÀ» ÀĞ±â
+	ifstream student_file("new_grades.txt"); // ¿¡·±
 
 	vector<Student_info> students, undergrad, grad, intl;
 	Student_info record;
 	string::size_type maxlen = 0;
 
-	// ë°ì´í„°ë¥¼ ì½ê³  ì €ì¥í•˜ê¸°
+	// µ¥ÀÌÅÍ¸¦ ÀĞ°í ÀúÀåÇÏ±â
 	while (record.read(student_file)) {
 		maxlen = max(maxlen, record.getName().size());
 		students.push_back(record);
 	}
 
-	// í•™ìƒ ê¸°ë¡ì„ ì•ŒíŒŒë²³ ìˆœìœ¼ë¡œ ì •ë ¬
+	// ÇĞ»ı ±â·ÏÀ» ¾ËÆÄºª ¼øÀ¸·Î Á¤·Ä
 	sort(students.begin(), students.end(), Student_info::compare);
 
-	// ì´ë¦„ê³¼ ì ìˆ˜ ì¶œë ¥
+	// ÀÌ¸§°ú Á¡¼ö Ãâ·Â
 	for (vector<Student_info>::size_type i = 0; i != students.size(); ++i) {
 		cout << students[i].getName()
 			<< string(maxlen + 1 - students[i].getName().size(), ' ');

@@ -1,3 +1,4 @@
+#pragma once
 // Grad.h
 #ifndef GUARD_GRAD_H
 #define GUARD_GRAD_H
@@ -6,8 +7,8 @@
 
 class Grad : public Core {
 public:
-	// ë‘ ìƒì„±ì ëª¨ë‘ ì•”ë¬µì ìœ¼ë¡œ Core::Core()ë¥¼ ì‚¬ìš©í•˜ì—¬
-	// ê°ì²´ê°€ ê¸°ë³¸ í´ë˜ìŠ¤ì—ì„œ ìƒì†í•œ ë¶€ë¶„ì„ ì´ˆê¸°í™”
+	// µÎ »ı¼ºÀÚ ¸ğµÎ ¾Ï¹¬ÀûÀ¸·Î Core::Core()¸¦ »ç¿ëÇÏ¿©
+	// °´Ã¼°¡ ±âº» Å¬·¡½º¿¡¼­ »ó¼ÓÇÑ ºÎºĞÀ» ÃÊ±âÈ­
 	Grad() : thesis(0) {};
 	Grad(istream& is) { read(is); };
 
@@ -16,7 +17,7 @@ public:
 protected:
 	Grad* clone() const { return new Grad(*this); }
 private:
-	double thesis; // ë…¼ë¬¸
+	double thesis; // ³í¹®
 };
 
 #endif

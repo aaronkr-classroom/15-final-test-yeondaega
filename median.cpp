@@ -9,20 +9,20 @@ using std::vector;
 using std::domain_error;
 using std::sort;
 
-// vector<double>ì˜ ì¤‘ì•™ê°’ì„ êµ¬í•¨.
-// í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ë©´ ì¸ìˆ˜ë¡œ ì œê³µëœ ë°±í„°ë¥¼ í†µì§¸ë¡œ ë³µì‚¬
+// vector<double>ÀÇ Áß¾Ó°ªÀ» ±¸ÇÔ.
+// ÇÔ¼ö¸¦ È£ÃâÇÏ¸é ÀÎ¼ö·Î Á¦°øµÈ ¹éÅÍ¸¦ ÅëÂ°·Î º¹»ç
 double median(vector<double> vec) {
-    // ê³¼ì œ ì ìˆ˜ì˜ ì…ë ¥ ìœ ë¬´ë¥¼ í™•ì¸
+    // °úÁ¦ Á¡¼öÀÇ ÀÔ·Â À¯¹«¸¦ È®ÀÎ
     typedef vector<double>::size_type vec_sz;
     vec_sz size = vec.size();
     if (size == 0) {
         throw domain_error("Median of empty vector");
     }
 
-    // ì ìˆ˜ë¥¼ ì •ë ¬
+    // Á¡¼ö¸¦ Á¤·Ä
     sort(vec.begin(), vec.end());
 
-    // ê³¼ì œ ì ìˆ˜ì˜ ì¤‘ì•™ê°’ì„ êµ¬í•¨
+    // °úÁ¦ Á¡¼öÀÇ Áß¾Ó°ªÀ» ±¸ÇÔ
     vec_sz mid = size / 2;
     return size % 2 == 0
         ? (vec[mid] + vec[mid - 1]) / 2 : vec[mid];

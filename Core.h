@@ -1,3 +1,4 @@
+#pragma once
 # ifndef GUARD_CORE_H
 # define GUARD_CORE_H
 
@@ -9,19 +10,19 @@ using namespace std;
 
 class Core {
 public:
-	// Core í´ë˜ìŠ¤ì˜ ê¸°ë³¸ ìƒì„±ìì™€ ê¸°ë³¸ ê°’
+	// Core Å¬·¡½ºÀÇ ±âº» »ı¼ºÀÚ¿Í ±âº» °ª
 	Core() : midterm(0), final(0) {};
 
-	// istreamìœ¼ë¡œ Core ê°ì²´ ìƒì„±
+	// istreamÀ¸·Î Core °´Ã¼ »ı¼º
 	Core(istream& is) { read(is); };
 
 	string getName() const;
-	virtual double grade() const; // ê°€ìƒ í•¨ìˆ˜
-	virtual istream& read(istream&); // ê°€ìƒ í•¨ìˆ˜
+	virtual double grade() const; // °¡»ó ÇÔ¼ö
+	virtual istream& read(istream&); // °¡»ó ÇÔ¼ö
 
-	virtual ~Core() {} // ê°€ìƒ ì†Œë©¸ì
+	virtual ~Core() {} // °¡»ó ¼Ò¸êÀÚ
 protected:
-	istream& read_common(istream&); // ì´ë¦„, ì‹œí—˜, ê³¼ì œ
+	istream& read_common(istream&); // ÀÌ¸§, ½ÃÇè, °úÁ¦
 	double midterm, final;
 	vector<double> homework;
 
